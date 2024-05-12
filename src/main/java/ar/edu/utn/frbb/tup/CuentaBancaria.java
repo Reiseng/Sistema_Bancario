@@ -1,38 +1,51 @@
 package ar.edu.utn.frbb.tup;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 class CuentaBancaria {
-
+    private Date fecha = new Date();
     private int numeroCuenta;
     private Cliente cliente;
     private String tipoCuenta;
     private double saldo;
-    private String fechaApertura;
+    private Date fechaApertura;
     private List<MovimientoCuenta> movimientos;
 
-    public CuentaBancaria(int numeroCuenta, Cliente cliente, String tipoCuenta, double saldo, String fechaApertura) {
+    public CuentaBancaria(int numeroCuenta, Cliente cliente, String tipoCuenta, double saldo) {
         this.numeroCuenta = numeroCuenta;
         this.cliente = cliente;
         this.tipoCuenta = tipoCuenta;
-        this.saldo = saldo;
-        this.fechaApertura = fechaApertura;
+        if (saldo < 0){
+            this.saldo = 0;
+        }
+        else {
+            this.saldo = saldo;
+        }
+        this.fechaApertura = new Date();
         this.movimientos = new ArrayList<>();
     }
-
-    // Getters y Setters
     public int getNumeroCuenta(){
         return this.numeroCuenta;
     }
     public void depositar(double monto, String tipoOperacion) {
-        this.saldo += monto;
-        movimientos.add(new MovimientoCuenta(tipoOperacion, monto));
+            if (tipoOperacion != "Transferencia Recibida") {
+                tipoOperacion = "Deposito";
+            }
+            this.saldo += monto;
+            movimientos.add(new MovimientoCuenta(tipoOperacion, monto, fecha));
     }
-
     public void retirar(double monto, String tipoOperacion) {
-        this.saldo -= monto;
-        movimientos.add(new MovimientoCuenta(tipoOperacion, -monto));
+        if (monto <= this.saldo) {
+            if(tipoOperacion != "Transferencia Recibida") {
+                tipoOperacion = "Retiro";
+            }
+            this.saldo -= monto;
+            movimientos.add(new MovimientoCuenta(tipoOperacion, -monto, fecha));
+        }else{
+        System.out.println("Saldo insuficiente para realizar la transaccion");
+        }
     }
 
     public double consultarSaldo() {
@@ -40,9 +53,13 @@ class CuentaBancaria {
     }
 
     public void transferir(double monto, CuentaBancaria cuentaDestino) {
-        this.saldo -= monto;
-        cuentaDestino.depositar(monto, "Transferencia recibida");
-        movimientos.add(new MovimientoCuenta("Transferencia enviada a cuenta " + cuentaDestino.getNumeroCuenta(), -monto));
+        if (monto <= this.saldo) {
+            this.saldo -= monto;
+            cuentaDestino.depositar(monto, "Transferencia recibida");
+            movimientos.add(new MovimientoCuenta("Transferencia enviada a cuenta " + cuentaDestino.getNumeroCuenta(), -monto, fecha));
+        }else{
+            System.out.println("Saldo insuficiente para realizar la transaccion");
+        }
     }
 
     @Override

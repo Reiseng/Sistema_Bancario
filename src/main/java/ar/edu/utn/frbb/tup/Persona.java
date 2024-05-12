@@ -5,10 +5,10 @@ class Persona {
     private String apellido;
     private String dni;
     private String fechaNac;
-    private String direccion;
+    private Direccion direccion;
     private String telefono;
     private String mail;
-    public Persona(String nombre, String apellido, String dni, String fechaNac, String direccion, String telefono, String mail) {
+    public Persona(String nombre, String apellido, String dni, String fechaNac, Direccion direccion, String telefono, String mail) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -50,11 +50,11 @@ class Persona {
         this.fechaNac = fechaNac;
     }
 
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 

@@ -1,15 +1,16 @@
 package ar.edu.utn.frbb.tup;
+import java.util.Date;
 
 class MovimientoCuenta {
+    private Date hora;
     private String tipoOperacion;
     private double monto;
 
-    public MovimientoCuenta(String tipoOperacion, double monto) {
+    public MovimientoCuenta(String tipoOperacion, double monto, Date hora) {
         this.tipoOperacion = tipoOperacion;
         this.monto = monto;
+        this.hora = hora;
     }
-
-
     public String getTipoOperacion() {
         return tipoOperacion;
     }
@@ -23,6 +24,7 @@ class MovimientoCuenta {
         return "{" +
                 "tipoOperacion='" + tipoOperacion + '\'' +
                 ", monto=" + monto +
+                ", fecha=" + hora +
                 '}';
     }
 }
