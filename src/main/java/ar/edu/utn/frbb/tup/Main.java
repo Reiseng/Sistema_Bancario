@@ -1,6 +1,7 @@
 package ar.edu.utn.frbb.tup;
 
 public class Main {
+
     public static void main(String[] args) {
         Cliente persona = new Cliente("Facundo", "Reiseng", "3049503", "2023-05-11", "Aaron castellanos 641", "2020302", " ", 1);
         Cliente persona2 = new Cliente("Facundo", "Reiseng", "30495043", "2023-05-11", "Aaron castellanos 641", "2020302", " ", 2);

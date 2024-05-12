@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class CuentaBancaria {
+
     private int numeroCuenta;
     private Cliente cliente;
     private String tipoCuenta;

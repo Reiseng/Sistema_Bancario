@@ -74,6 +74,7 @@ class Persona {
         this.mail = mail;
     }
 
+
     @Override
     public String toString() {
         return "{" +

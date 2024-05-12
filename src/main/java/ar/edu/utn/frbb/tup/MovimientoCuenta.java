@@ -9,6 +9,7 @@ class MovimientoCuenta {
         this.monto = monto;
     }
 
+
     public String getTipoOperacion() {
         return tipoOperacion;
     }

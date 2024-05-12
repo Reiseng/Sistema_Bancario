@@ -7,6 +7,7 @@ class Cliente extends Persona {
         super(nombre, apellido, dni, fechaNac, direccion, telefono, mail);
         this.id = id;
     }
+
     public int getId() {
         return id;
     }
