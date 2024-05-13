@@ -6,6 +6,11 @@ class Cliente extends Persona {
         super(nombre, apellido, dni, fechaNac, direccion, telefono, mail);
         this.id = id;
     }
+    public Cliente(String nombre, String apellido, String dni, String fechaNac, String telefono, int id) {
+        //Constructor para generar un cliente sin Mail y la Direccion
+        super(nombre, apellido, dni, fechaNac, telefono);
+        this.id = id;
+    }
 
     public int getId() {
         return id;

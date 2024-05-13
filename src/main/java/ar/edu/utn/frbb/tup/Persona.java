@@ -17,6 +17,13 @@ class Persona {
         this.telefono = telefono;
         this.mail = mail;
     }
+    public Persona(String nombre, String apellido, String dni, String fechaNac, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.fechaNac = fechaNac;
+        this.telefono = telefono;
+    }
 
     public String getNombre() {
         return nombre;

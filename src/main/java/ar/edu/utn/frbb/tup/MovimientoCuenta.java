@@ -2,7 +2,7 @@ package ar.edu.utn.frbb.tup;
 import java.util.Date;
 
 class MovimientoCuenta {
-    private Date hora;
+    private Date hora; //Tomamos la fecha actual para guardar en los movimientos
     private String tipoOperacion;
     private double monto;
 
