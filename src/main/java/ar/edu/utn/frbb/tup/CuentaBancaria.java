@@ -45,7 +45,7 @@ class CuentaBancaria extends Banco {
     }
 
     public void retirar(double monto) {
-        if (monto <= this.saldo) {
+        if (monto <= this.saldo && monto > 0) {
             this.saldo -= monto;
             movimientos.add(new MovimientoCuenta("Retiro", -monto, setFechaActual()));
         } else {
@@ -54,7 +54,7 @@ class CuentaBancaria extends Banco {
     }
 
     public void transferir(double monto, CuentaBancaria cuentaDestino) {
-        if (monto <= this.saldo) {
+        if (monto <= this.saldo && monto > 0) {
             this.saldo -= monto;
             cuentaDestino.movimientos.add(new MovimientoCuenta("Transferencia Recibida de cuenta " + cuentaDestino.getNumeroCuenta(), +monto, setFechaActual()));
             movimientos.add(new MovimientoCuenta("Transferencia enviada a cuenta " + cuentaDestino.getNumeroCuenta(), -monto, setFechaActual()));

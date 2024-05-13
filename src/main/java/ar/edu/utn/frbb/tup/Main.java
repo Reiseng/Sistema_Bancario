@@ -16,14 +16,14 @@ public class Main {
 
         //Realizamos los movimientos
         cuentaPersona.transferir(2000,cuentaPersona2);
-        cuentaPersona.transferir(2500,cuentaPersona2);
+        cuentaPersona.transferir(-250000,cuentaPersona2);
 
         cuentaPersona2.retirar(25000);
 
         cuentaPersona2.depositar(2000);
 
         //Imprimimos en pantalla los datos de ambas cuentas
-        System.out.println(cuentaPersona2.toString()+ "\n");
-        System.out.println(cuentaPersona.toString());
+        System.out.println(cuentaPersona2 + "\n");
+        System.out.println(cuentaPersona);
     }
 }
