@@ -78,8 +78,7 @@ class CuentaBancaria extends Banco {
         }
     }
     public Date setFechaActual() {
-        Date fechaActual = new Date();
-        return fechaActual;
+        return new Date();
     }
     @Override
     public String toString() {
