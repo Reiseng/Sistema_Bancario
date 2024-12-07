@@ -2,7 +2,7 @@
 
 Endpoint POST /cliente/crearCliente Ejemplo:
 {
-  "dni": 39789454,
+  "dni": 58975421,
   "nombre": "Facundo",
   "apellido": "Reiseng",
   "fechaNacimiento": "1996-11-05",
@@ -17,12 +17,12 @@ Endpoint POST /cuenta/crearCuenta Ejemplo:
     "balance": 10000.50,
     "tipoCuenta": "AHORRO",
     "moneda": "USD",
-    "titularDni": "12345678"
+    "titularDni": "58975421"
 }
 
 Endpoint POST /api/prestamo Ejemplo
 {
-  "dniCliente": 39789454,
+  "dniCliente": 58975421,
   "plazo": 12,
   "monto": 5000.0,
   "moneda": "DOLARES"
